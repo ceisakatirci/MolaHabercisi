@@ -17,11 +17,8 @@ namespace MolaHabercisi
         private static readonly object _syncLock2 = new Object();
         private static readonly object _syncLock3 = new Object();
 
-
         private bool _durdurulduMu;
-        private bool _sifirlandiMi;
         private bool _saniyeMi;
-
 
         public bool DurdurulduMu
         {
@@ -37,24 +34,6 @@ namespace MolaHabercisi
                 lock (_syncLock)
                 {
                     _durdurulduMu = value;
-                }
-            }
-        }
-
-        public bool SifirlandiMi
-        {
-            get
-            {
-                lock (_syncLock2)
-                {
-                    return _sifirlandiMi;
-                }
-            }
-            set
-            {
-                lock (_syncLock2)
-                {
-                    _sifirlandiMi = value;
                 }
             }
         }
@@ -76,8 +55,6 @@ namespace MolaHabercisi
             }
         }
 
-
-
         public Form1()
         {
             InitializeComponent();
@@ -92,7 +69,6 @@ namespace MolaHabercisi
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-
 
             int i = 0;
             if (this.DurdurulduMu)
@@ -116,8 +92,6 @@ namespace MolaHabercisi
 
             }
         }
-
-
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
