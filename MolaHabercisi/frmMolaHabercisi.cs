@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MolaHabercisi
 {
-    public partial class Form1 : Form
+    public partial class frmMolaHabercisi : Form
     {
         private static readonly object _syncLock = new Object();
         private static readonly object _syncLock2 = new Object();
@@ -55,7 +55,7 @@ namespace MolaHabercisi
             }
         }
 
-        public Form1()
+        public frmMolaHabercisi()
         {
             InitializeComponent();
             backgroundWorker_Dakika.WorkerReportsProgress = true;
